@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌹 Happy Rose Day - A Gift of Love</title>
+
+  <meta name="description" content="A beautiful Rose Day gift for someone special">
+  <meta name="theme-color" content="#e63946">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌹</text></svg>">
+
+  <link rel="stylesheet" href="css/rose.css">
+</head>
+
+<body>
+
+  <!-- Particle Background -->
+  <canvas id="particles"></canvas>
+
+  <!-- Floating Petals -->
+  <div class="petals-bg" id="petals-bg"></div>
+
+  <!-- Music Toggle -->
+  <button class="music-btn" id="music-btn" onclick="toggleMusic()">🎵</button>
+
+  <!-- ==========================================
+       LANDING SECTION
+       ========================================== -->
+  <section class="landing" id="landing">
+    <div class="landing-content">
+
+      <!-- Beautiful Animated Gift Box -->
+      <div class="gift-box-container" id="gift-box">
+        <div class="gift-glow"></div>
+        <div class="gift-box">
+          <div class="gift-lid">
+            <div class="lid-bow">�</div>
+          </div>
+          <div class="gift-body">
+            <div class="gift-ribbon-v"></div>
+            <div class="gift-ribbon-h"></div>
+          </div>
+        </div>
+        <div class="gift-sparkles">
+          <span>✨</span><span>💖</span><span>✨</span>
+          <span>💕</span><span>🌹</span><span>💕</span>
+        </div>
+      </div>
+
+      <h1 class="main-title">
+        <span class="title-line">A Special Gift</span>
+        <span class="title-line accent">For You 🌹</span>
+      </h1>
+
+      <p class="subtitle">Click the gift to open your surprise!</p>
+
+      <button class="open-btn" id="open-btn">
+        <span class="btn-text">✨ Open Your Gift ✨</span>
+        <span class="btn-shine"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT - Hidden until gift opens -->
+  <div id="main-content" class="main-content hidden">
+
+    <!-- ==========================================
+       HERO PHOTO SECTION
+       ========================================== -->
+    <section class="hero-section" id="hero-photo">
+      <div class="hero-frame">
+        <!-- 👇 CHANGE THIS IMAGE PATH TO YOUR PHOTO -->
+        <img src="assets/images/9.jpeg" alt="My Beautiful Rose" class="hero-img">
+        <div class="hero-overlay"></div>
+      </div>
+      <h2 class="hero-title">My Beautiful Rose 🌹</h2>
+    </section>
+
+    <!-- ==========================================
+       LOVE LETTER SECTION
+       ========================================== -->
+    <section class="love-letter" id="love-letter">
+      <div class="letter-container">
+        <div class="letter-header">
+          <span class="letter-icon">💌</span>
+          <h2>My Dearest Love</h2>
+        </div>
+
+        <div class="letter-body">
+          <p class="letter-text" id="letter-text">
+            On this beautiful Rose Day, I want you to know that my love for you blooms brighter with each passing
+            moment.
+            <br><br>
+            Like the most precious rose in a garden of millions, you stand out with your beauty, grace, and the warmth
+            of
+            your heart.
+            <br><br>
+            Every petal of this rose represents a reason why I adore you — your smile that lights up my world, your
+            laughter that fills my heart with joy, and your love that makes every day worth living.
+            <br><br>
+            You are not just my love, you are my whole garden of happiness. 🌹
+          </p>
+
+          <div class="letter-signature">
+            <p>Forever & Always,</p>
+            <p class="signature-name">Your Love ❤️</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+       REASONS SECTION
+       ========================================== -->
+    <section class="reasons-section" id="reasons">
+      <h2 class="section-title">
+        <span class="title-rose">🌹</span>
+        Why You Are My Rose
+        <span class="title-rose">🌹</span>
+      </h2>
+
+      <div class="reasons-carousel" id="reasons-carousel">
+        <div class="reason-card active">
+          <span class="reason-number">01</span>
+          <p class="reason-text">Your smile makes my heart bloom</p>
+        </div>
+        <div class="reason-card">
+          <span class="reason-number">02</span>
+          <p class="reason-text">You are my peace in every storm</p>
+        </div>
+        <div class="reason-card">
+          <span class="reason-number">03</span>
+          <p class="reason-text">Your love makes me a better person</p>
+        </div>
+        <div class="reason-card">
+          <span class="reason-number">04</span>
+          <p class="reason-text">Every moment with you is magical</p>
+        </div>
+        <div class="reason-card">
+          <span class="reason-number">05</span>
+          <p class="reason-text">You understand me like no one else</p>
+        </div>
+      </div>
+
+      <div class="carousel-dots" id="carousel-dots"></div>
+    </section>
+
+    <!-- ==========================================
+       PHOTO GALLERY SECTION
+       ========================================== -->
+    <section class="gallery-section" id="gallery">
+      <h2 class="section-title">🌹 My Future Memories 🌹</h2>
+
+      <div class="gallery-grid">
+
+        <!-- PHOTO 1 - Replace src with your image -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <!-- 👇 CHANGE THIS IMAGE PATH TO YOUR PHOTO -->
+            <img src="assets/images/1.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">❤️</span>
+            </div>
+          </div>
+          <!-- 👇 CHANGE THIS CAPTION -->
+          <p class="photo-caption">The day we first met 💕</p>
+        </div>
+
+        <!-- PHOTO 2 - Replace src with your image -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <!-- 👇 CHANGE THIS IMAGE PATH TO YOUR PHOTO -->
+            <img src="assets/images/2.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">�</span>
+            </div>
+          </div>
+          <!-- 👇 CHANGE THIS CAPTION -->
+          <p class="photo-caption">Your smile lights up my world ✨</p>
+        </div>
+
+        <!-- PHOTO 3 - Replace src with your image -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <!-- 👇 CHANGE THIS IMAGE PATH TO YOUR PHOTO -->
+            <img src="assets/images/3.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">💝</span>
+            </div>
+          </div>
+          <!-- 👇 CHANGE THIS CAPTION -->
+          <p class="photo-caption">Every moment with you is magical �</p>
+        </div>
+
+        <!-- PHOTO 4 - Replace src with your image -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <!-- 👇 CHANGE THIS IMAGE PATH TO YOUR PHOTO -->
+            <img src="assets/images/4.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">💗</span>
+            </div>
+          </div>
+          <!-- 👇 CHANGE THIS CAPTION -->
+          <p class="photo-caption">My favorite person in the world 💕</p>
+        </div>
+
+        <!-- PHOTO 5 - Replace src with your image -->
+        <div class="photo-card featured">
+          <div class="photo-frame">
+            <!-- 👇 CHANGE THIS IMAGE PATH TO YOUR PHOTO -->
+            <img src="assets/images/5.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">�</span>
+            </div>
+          </div>
+          <!-- 👇 CHANGE THIS CAPTION -->
+          <p class="photo-caption">You are my forever �</p>
+        </div>
+
+        <!-- PHOTO 6 - Replace src with your image -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <!-- 👇 CHANGE THIS IMAGE PATH TO YOUR PHOTO -->
+            <img src="assets/images/6.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">�</span>
+            </div>
+          </div>
+          <!-- 👇 CHANGE THIS CAPTION -->
+          <p class="photo-caption">Together is my favorite place 🏠</p>
+        </div>
+
+        <!-- PHOTO 7 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="assets/images/7.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">💫</span>
+            </div>
+          </div>
+          <p class="photo-caption">Making memories with you 💖</p>
+        </div>
+
+        <!-- PHOTO 8 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="assets/images/8.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">💞</span>
+            </div>
+          </div>
+          <p class="photo-caption">Forever grateful for you 🌹</p>
+        </div>
+
+        <!-- PHOTO 9 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="assets/images/9.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">💕</span>
+            </div>
+          </div>
+          <p class="photo-caption">My heart belongs to you 💗</p>
+        </div>
+
+        <!-- PHOTO 10 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="assets/images/10.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">🌹</span>
+            </div>
+          </div>
+          <p class="photo-caption">Love you to infinity ∞</p>
+        </div>
+
+        <!-- PHOTO 11 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="assets/images/11.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">✨</span>
+            </div>
+          </div>
+          <p class="photo-caption">Precious ✨</p>
+        </div>
+
+        <!-- PHOTO 12 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="assets/images/12.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">💖</span>
+            </div>
+          </div>
+          <p class="photo-caption">My World 🌎</p>
+        </div>
+
+        <!-- PHOTO 13 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="assets/images/13.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">💝</span>
+            </div>
+          </div>
+          <p class="photo-caption">Forever Us 💑</p>
+        </div>
+
+        <!-- PHOTO 14 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="assets/images/14.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">💗</span>
+            </div>
+          </div>
+          <p class="photo-caption">Sweetest 🥰</p>
+        </div>
+
+        <!-- PHOTO 15 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="assets/images/15.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">💞</span>
+            </div>
+          </div>
+          <p class="photo-caption">Everything ❤️</p>
+        </div>
+
+        <!-- PHOTO 16 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="assets/images/16.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">🌹</span>
+            </div>
+          </div>
+          <p class="photo-caption">Pure Love ❤️</p>
+        </div>
+
+        <!-- PHOTO 17 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="assets/images/17.jpeg" alt="Our Memory" class="photo-img">
+            <div class="photo-overlay">
+              <span class="heart-icon">✨</span>
+            </div>
+          </div>
+          <p class="photo-caption">Always & Forever 💑</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIDEO MEMORIES SECTION
+         ========================================== -->
+    <section class="video-memories-section" id="video-memories">
+      <h2 class="section-title">🎥 My Future Memories 🎥</h2>
+
+      <div class="video-grid">
+        <!-- VIDEO 1 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="assets/videos/1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">A moment to cherish forever ✨</p>
+        </div>
+
+        <!-- VIDEO 2 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="assets/videos/2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">Happiness is being with you 💖</p>
+        </div>
+
+        <!-- VIDEO 3 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="assets/videos/3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">Making memories together 🌹</p>
+        </div>
+
+        <!-- VIDEO 4 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="assets/videos/4.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">You are my sunshine ☀️</p>
+        </div>
+
+        <!-- VIDEO 5 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="assets/videos/5.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">Best moments with you 💫</p>
+        </div>
+
+        <!-- VIDEO 6 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="assets/videos/6.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">My favorite views 💖</p>
+        </div>
+
+        <!-- VIDEO 7 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="assets/videos/7.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">Love in every frame 💌</p>
+        </div>
+
+        <!-- VIDEO 8 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="assets/videos/8.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">Cherished times 🌹</p>
+        </div>
+
+        <!-- VIDEO 9 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="assets/videos/9.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">You & Me Forever ∞</p>
+        </div>
+
+        <!-- VIDEO 10 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="assets/videos/10.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">Endless love �</p>
+        </div>
+
+        <!-- VIDEO 11 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="assets/videos/11.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">Just us two 💑</p>
+        </div>
+
+        <!-- VIDEO 12 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="assets/videos/12.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">Beautiful days ☀️</p>
+        </div>
+
+        <!-- VIDEO 13 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="assets/videos/13.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">My heart is yours ❤️</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         LOVE QUOTES SECTION
+         ========================================== -->
+    <section class="quotes-section" id="quotes">
+      <h2 class="section-title">💕 Words From My Heart 💕</h2>
+
+      <div class="quotes-container">
+        <div class="quote-card">
+          <span class="quote-icon">💌</span>
+          <p class="quote-text">"Every love story is beautiful, but ours is my favorite."</p>
+        </div>
+
+        <div class="quote-card">
+          <span class="quote-icon">🌹</span>
+          <p class="quote-text">"I fell in love with you not for who you are, but who I am when I'm with you."</p>
+        </div>
+
+        <div class="quote-card">
+          <span class="quote-icon">💝</span>
+          <p class="quote-text">"You are my today and all of my tomorrows."</p>
+        </div>
+
+        <div class="quote-card">
+          <span class="quote-icon">✨</span>
+          <p class="quote-text">"In a sea of people, my eyes will always search for you."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+       SURPRISE SECTION
+       ========================================== -->
+    <section class="surprise-section" id="surprise">
+      <div class="surprise-box" id="surprise-box">
+        <div class="box-wrapping">
+          <div class="box-ribbon">🎀</div>
+        </div>
+        <p class="surprise-label">Tap to reveal your surprise!</p>
+      </div>
+
+      <div class="surprise-reveal hidden" id="surprise-reveal">
+        <div class="reveal-content">
+          <span class="reveal-emoji">🌹💕</span>
+          <h2 class="reveal-title">I Love You!</h2>
+          <p class="reveal-text">More than all the roses in the world combined. You are my forever. ❤️</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+       OUR SONG VIDEO SECTION
+       ========================================== -->
+    <section class="video-section" id="video">
+      <h2 class="section-title">🎵 Song for You 🎵</h2>
+      <div class="video-container">
+        <iframe id="main-video-player"
+          src="https://www.youtube.com/embed/ZhKxC5pc52k?enablejsapi=1&autoplay=1&loop=1&playlist=ZhKxC5pc52k"
+          title="Our Song" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-caption">A song that reminds me of you ❤️</p>
+    </section>
+
+    <!-- ==========================================
+       FOOTER
+       ========================================== -->
+    <footer class="footer">
+      <div class="footer-roses">🌹🌹🌹</div>
+      <p>Made with endless love</p>
+      <p class="footer-date">Rose Day 2026</p>
+    </footer>
+
+  </div><!-- End main-content -->
+
+  <!-- Scripts -->
+  <script src="js/rose.js"></script>
+</body>
+
+</html>
